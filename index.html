@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Real-Time Robotic Emotional Expression from Mixed-Reality Demostrations via Flow Matching">
+  <meta name="keywords" content="Robot, LLM, Planning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investigating LLM-Driven Curiosity in Human-Robot Interaction</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+              <path fill="#808080"
+                d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z" />
+            </svg>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://hri-eu.github.io/AttentiveSupport/" target="_blank">
+              Attentive Support Robot
+            </a>
+            <a class="navbar-item" href="https://hri-eu.github.io/Loom/" target="_blank">
+              LLM-driven Corrective Planning of Robot Actions
+            </a>
+            <a class="navbar-item" href="https://hri-eu.github.io/Lami/" target="_blank">
+              LLM for Multi-Modal Human-Robot Interaction
+            </a>
+            <a class="navbar-item" href="https://hri-eu.github.io/MirrorEyes/" target="_blank">
+              Explainable Human-Robot Interaction at a Glance
+            </a>
+            <a class="navbar-item" href="https://wallacewangchao.github.io/curious_robot/" target="_blank">
+              Investigating LLM-Driven Curiosity in Human-Robot Interaction
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- <img src="static/images/chi_logo.jpg" alt="iros-24" style="width:240px;height:auto;"> -->
+            <h1 class="title is-1 publication-title">Real-Time Robotic Emotional Expression from Mixed-Reality
+              Demonstrations via Flow Matching</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://wallacewangchao.github.io/" target="_blank"> Chao Wang, </a>
+              </span>
+
+              <span class="author-block">
+                Michael Gienger,
+              </span>
+
+              <span class="author-block">
+                Fan Zhang
+              </span>
+
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <a class="author-block" href="https://www.honda-ri.de/" target="_blank">Honda Research Institute EU</a>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2508.08999" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+
+                <!-- Code Link. -->
+                <!-- <span class="link-block">
+                <a href="https://github.com/HRI-EU/AttentiveSupport"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </span> -->
+
+                <!-- Dataset Link. -->
+                <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero body">
+    <div class="container is-max-desktop">
+      <img src="./static/images/teaser.jpg">
+      <h6 class="is-size-6 has-text-centered">
+        <b>Mixed-reality pipeline for learning robotic emotions.</b><br>
+        <b>Left</b>: An expert wearing an HMD teleoperates a virtual robot; the system records facial blend-shapes
+        together
+        with head and hand/controller poses, forming an affect-rich demonstration dataset.
+        <b>Centre</b>: These demonstrations train a flow-matching generative model that maps a desired mood label plus
+        live
+        perceptual cues (the mouse pose) to continuous joint targets.
+        <b>Right</b>: At inference the trained model runs at 120 Hz, taking the operator’s high-level mood command and
+        the
+        pose of salient objects to drive the robot’s eyes, ears, neck and arms with recognisable emotions inside the MR
+        scene.
+        Red (pink) arrows denote signals used only during data collection/training; blue arrows denote signals present
+        at runtime.
+      </h6>
+    </div>
+  </section>
+
+  <!-- Abstract. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Expressive behaviors in robots are critical for effectively conveying their emotional states during
+              interactions with humans. In this work, we present a framework that autonomously generates realistic and
+              diverse robotic emotional expressions based on expert human demonstrations captured in Mixed Reality (MR).
+              Our system enables experts to tele-operate a virtual robot from a first-person perspective, capturing
+              their facial expressions, head movements, and upper-body gestures, and mapping these behaviors onto
+              corresponding robotic components including eyes, ears, neck, and arms. Leveraging a flow-matching-based
+              generative process, our model learns to produce coherent and varied behaviors in real-time in response to
+              moving objects, conditioned explicitly on given emotional states.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container is-max-desktop">
+      <div class="hero body">
+        <video id="teaser" autoplay="autoplay" controls autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/fm-expression-video.mp4" type="video/mp4">
+        </video>
+        <p class="subtitle has-text-centered">
+          Using XR glasses for training and observe the result for real-time inference
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- System. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">The XR platform</h2>
+          <div class="content has-text-justified">
+            <p>
+              1. 7 facial-expression values detected by the XR-headset map the robot's ears angle and shape of the eyes,
+              the gaze direction also maps the position of the eyes on the plane of robot face screen. Some value of the
+              facial expression also maps the movement of the robot's ear. 2. Human's head position and orientation maps
+              the robot's end effector, relative to the operator's head pose as the origin. The positional value is
+              scaled by 1.5 for enhancing operator's reachability. 3. There is a virtual screen floating in front of
+              the operator, which allows the operator to observe the environment from the first person perspective.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <img src="./static/images/xr-platform.jpg">
+      </div>
+    </div>
+  </section>
+
+  <!-- curious behaviours. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Overview of flow matching for expression generation</h2>
+          <div class="content has-text-justified">
+            <p>
+              A history window of robot and target poses plus an emotion label (pink) is fed through FiLM-conditioned
+              U-Net to predict the blue action sequence executed on the robot.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <img src="./static/images/method-architechture.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Preliminary Results</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>Training protocol.</b> The flow model was trained for 3000
+              epochs with a batch size of 256 and a learning rate of 1 x
+              10-4. We explored four history-window lengths (1, 2, 4, and
+              16 frames) in combination with two prediction horizons (16
+              and 32 frames).
+              <br>
+              <b>Expert appraisal.</b> A panel of HRI researchers informally
+              inspected roll-outs and provided qualitative feedback:
+            <ol>
+              <li>
+                <b>Temporal context.</b> A 16-frame history performed noticeably worse than 2–4 frames, suggesting that
+                our FiLM-conditioned U-Net does not fully exploit long temporal correlations. Replacing FiLM with a
+                transformer-based temporal encoder may improve sequence understanding at the cost of heavier training.
+              </li>
+              <li>
+                <b>Prediction horizon.</b> Longer horizons (32 frames) produced more complete, fluid gestures, whereas
+                short horizons introduced occasional “jumps” when the policy re-planned. This points to a weak internal
+                notion of phase; additional data or an explicit timing signal could reduce discontinuities.
+              </li>
+              <li>
+                <b>Emotion coverage.</b> Six of the seven emotions transferred convincingly; the curious behaviour
+                lacked the distinctive “poke” motion present in the demonstrations. We attribute this to data sparsity
+                and will extend the dataset with targeted examples.
+              </li>
+            </ol>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <img src="./static/images/expressions.jpg">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Preliminary Results</h2>
+
+            <div class="columns">
+              <div class="column">
+                <video poster="" id="video1" controls="" muted="" loop="" height="100%">
+                  <source src="static/videos/Baseline_Step1_Stop_720p25fps_lq_2mbs_no_audio.mp4" type="video/mp4">
+                </video>
+                <p>
+                  Pick-up (step 1) error in <span style="color: #810f7b">Eyes-Only</span> condition
+                </p>
+              </div>
+              <div class="column">
+                <video poster="" id="video2" controls="" muted="" loop="" height="100%">
+                  <source src="static/videos/Mirror_Step1_Stop_720p25fps_lq_2mbs_no_audio.mp4" type="video/mp4">
+                </video>
+                <p>
+                  Pick-up (step 1) error with <span style="color: #048bd4">Mirror Eyes</span> enabled
+                </p>
+              </div>
+            </div>
+            <p style="margin-bottom:0.5em;"> </p>
+            <div class="columns">
+              <div class="column">
+                <video poster="" id="video3" controls="" muted="" loop="" height="100%">
+                  <source src="static/videos/Mirror_no_err_full_run_720p25fps_lq_2mbs_no_audio.mp4" type="video/mp4">
+                </video>
+                <p>
+                  Correct task execution with <span style="color: #048bd4">Mirror Eyes</span> enabled
+                </p>
+              </div>
+              <div class="column">
+                <video poster="" id="video4" controls="" muted="" loop="" height="100%">
+                  <source src="static/videos/Mirror_Step2_Stop_720P25fps_lq_2mbs_no_audio.mp4" type="video/mp4">
+                </video>
+                <p>
+                  Placement (step 2) error with <span style="color: #048bd4">Mirror Eyes</span> enabled
+                </p>
+              </div>
+            </div>
+
+            <div class="content has-text-centered">
+              <p>
+                The participant interrupts the robot upon detecting an erroneous action.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>This page was built using the <a
+                href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template.
+            </p>
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+<script>hljs.highlightAll();</script>
